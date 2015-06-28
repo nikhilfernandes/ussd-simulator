@@ -1,6 +1,6 @@
 from string_utils import StringUtils
-
 from calculator_flow import CalculatorFlow
+
 class Operation:
 
     def step_one(self):

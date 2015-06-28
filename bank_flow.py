@@ -1,13 +1,14 @@
 from flow import Flow
 class BankFlow:
-    operations = {'1': 'balance_inquiry', '2': "mini_statement", "3":"funds_transfer", "4": "bill_payments"}
+    operations = {'1': 'balance_inquiry', '2': "mini_statement", "3":"funds_transfer"}
 
     def menu(self):
-      self.input =  input("1. Balance Inquiry \n2. Mini Statement \n3. Funds Transfer \n4. Bill Payments \n5. Cheque Functions \n6. Other Services\n")
+      self.input =  input("1. Balance Inquiry \n2. Mini Statement \n3. Funds Transfer \n9. Exit \n")
       if self.input in self.operations :
           flow = Flow()
           flow.do(self.operations, self.input)            
-          
+      elif (self.input == "9"):
+          exit()          
       else:
           print("Wrong Selection: \n")
           self.menu()
