@@ -1,4 +1,5 @@
 from string_utils import StringUtils
+from flow import Flow
 class Simulator:
 
 
@@ -7,20 +8,10 @@ class Simulator:
 
     def run(self):
         msisdn = input("Enter your MSISDN: \n #123# for Banking \n #234# for Calculator \n") 
-        if msisdn in self.flows:                     
-            module = __import__(self.flows[msisdn])            
-            class_ = getattr(module, StringUtils.camelize(self.flows[msisdn]))
-            flow = class_()
-            flow.menu()            
+        if msisdn in self.flows:            
+            Flow.create_flow(self.flows[msisdn], StringUtils.camelize(self.flows[msisdn])).menu()         
         else:
             self.run()
-
-    
-    
-      
-
-
-
 
 simulator=Simulator({'#123#': 'bank_flow', '#234#': "calculator_flow"})
 Simulator.run(simulator)
