@@ -4,11 +4,5 @@ class BankFlow:
 
     def menu(self):
       self.input =  input("1. Balance Inquiry \n2. Mini Statement \n3. Funds Transfer \n9. Exit \n")
-      if self.input in self.operations :
-          flow = Flow()
-          flow.do(self.operations, self.input)            
-      elif (self.input == "9"):
-          exit()          
-      else:
-          print("Wrong Selection: \n")
-          self.menu()
+      flow = Flow()
+      flow.do(self.operations, self.input)
