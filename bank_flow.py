@@ -5,4 +5,4 @@ class BankFlow:
     def menu(self):
       self.input =  input("1. Balance Inquiry \n2. Mini Statement \n3. Funds Transfer \n9. Exit \n")
       flow = Flow()
-      flow.do(self.operations, self.input)
+      flow.do(self.operations, self.input, "bank_flow")
